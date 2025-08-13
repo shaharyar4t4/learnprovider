@@ -10,6 +10,10 @@ class CountScreen extends StatefulWidget {
 class _CountScreenState extends State<CountScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Hello"),
+      ),
+    );
   }
 }
