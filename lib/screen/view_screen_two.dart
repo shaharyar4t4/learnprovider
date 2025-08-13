@@ -1,9 +1,8 @@
-
 import '../links/app_linker.dart';
 
-class ViewScreenOne extends StatelessWidget {
+class ViewScreenTwo extends StatelessWidget {
 
-   ViewScreenOne({super.key});
+   ViewScreenTwo({super.key});
    
   int num =0;
   @override
