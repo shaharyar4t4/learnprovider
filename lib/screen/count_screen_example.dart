@@ -1,7 +1,6 @@
-
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:leranprovider/links/app_linker.dart';
-import 'dart:async';
 class CountScreen extends StatefulWidget {
   const CountScreen({super.key});
 
