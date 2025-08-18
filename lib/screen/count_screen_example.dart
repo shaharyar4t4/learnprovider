@@ -29,8 +29,10 @@ class _CountScreenState extends State<CountScreen> {
         title: Text("Learn Provider"),
       ),
       body: Center(
+        //only build this widget by using the Consumer widget
         child: Consumer<CountProvider>(builder: (context, value, child) {
           print("build only");
+
           return Text(
             "Count: ${value.count.toString()}",
             style: TextStyle(fontSize: 30),
