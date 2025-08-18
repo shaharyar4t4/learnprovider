@@ -5,3 +5,4 @@ export 'package:leranprovider/before/view_screen_two.dart';
 export 'package:leranprovider/screen/count_screen_example.dart';
 export 'package:flutter/foundation.dart';
 export 'package:leranprovider/provider/count_provider.dart';
+export 'package:leranprovider/provider/example_provider.dart';
