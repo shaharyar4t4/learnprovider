@@ -14,6 +14,12 @@ class _CountScreenState extends State<CountScreen> {
       appBar: AppBar(
         title: Text("Hello"),
       ),
+      body: Center(
+        child: Text(
+          "Count Screen",
+          style: TextStyle(fontSize: 24),
+        ),
+      ),
     );
   }
 }
