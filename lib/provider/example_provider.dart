@@ -9,6 +9,8 @@ class ViewExampleProvider extends StatefulWidget {
 }
 
 class _ViewExampleProviderState extends State<ViewExampleProvider> {
+  double value = 0.5;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,8 +18,25 @@ class _ViewExampleProviderState extends State<ViewExampleProvider> {
         title: const Text('Example Provider'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Hello"),
+          Slider(
+            value: value,
+            min: 0.0,
+            max: 1.0,
+            onChanged: (newValue) {
+              setState(() {
+                value = newValue;
+              });
+            },
+          ),
+          Row(
+            children: [
+              Container(
+                
+              )
+            ],
+          )
         ],
       ),
 
