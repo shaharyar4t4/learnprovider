@@ -9,7 +9,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(create: (_) => CountProvider(),
+
+    // this is show the multi provider states 
+    return MultiProvider(
+      providers: [
+         ChangeNotifierProvider(create: (_)=>CountProvider(),)
+      ],
+      
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Learn Provider',
@@ -19,6 +25,20 @@ class MyApp extends StatelessWidget {
         home: ViewExampleOne(), 
       ),
     );
+
+    // this is show the single provider states 
+
+  // return ChangeNotifierProvider(create:  (_) => ExampleOneProvider(),
+      
+  //     child: MaterialApp(
+  //       debugShowCheckedModeBanner: false,
+  //       title: 'Learn Provider',
+  //       theme: ThemeData(
+  //         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+  //       ),
+  //       home: ViewExampleOne(), 
+  //     ),
+  //   );
   
   }
-}
+} 

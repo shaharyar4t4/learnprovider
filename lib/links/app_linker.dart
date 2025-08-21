@@ -6,3 +6,4 @@ export 'package:leranprovider/screen/count_screen_example.dart';
 export 'package:flutter/foundation.dart';
 export 'package:leranprovider/provider/count_provider.dart';
 export 'package:leranprovider/screen/example_one.dart';
+export 'package:leranprovider/provider/example_one_provider.dart';
