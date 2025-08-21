@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
     // this is show the multi provider states 
     return MultiProvider(
       providers: [
-         ChangeNotifierProvider(create: (_)=>CountProvider(),)
+         ChangeNotifierProvider(create: (_)=>CountProvider(),),
+         ChangeNotifierProvider(create: (_)=>ExampleOneProvider(),)
       ],
       
       child: MaterialApp(

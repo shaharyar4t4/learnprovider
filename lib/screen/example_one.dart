@@ -10,7 +10,7 @@ class ViewExampleOne extends StatefulWidget {
 }
 
 class _ViewExampleOneState extends State<ViewExampleOne> {
-  double value = 1.0;
+  
   @override
   Widget build(BuildContext context) {
 
@@ -25,12 +25,12 @@ class _ViewExampleOneState extends State<ViewExampleOne> {
             value: slideProvider.value,
             min: 0.0,
             max: 1.0,
-            onChanged: (newValue) {
-              setState(() {
-                value = newValue;
-              });
+            onChanged: (val){
+            
+              slideProvider.setSlide(val);
             },
           ),
+            
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -40,7 +40,7 @@ class _ViewExampleOneState extends State<ViewExampleOne> {
                   vertical: 7,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.red.withOpacity(value),
+                  color: Colors.red.withOpacity(slideProvider.value),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
@@ -53,7 +53,7 @@ class _ViewExampleOneState extends State<ViewExampleOne> {
                   vertical: 7,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.blue.withOpacity(value),
+                  color: Colors.blue.withOpacity(slideProvider.value),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
@@ -62,15 +62,8 @@ class _ViewExampleOneState extends State<ViewExampleOne> {
               ),
             ],
           ),
-        ],
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Action to perform when the button is pressed
-        },
-        child: const Icon(Icons.add),
-      ),
+        ],)
+      
     );
   }
 }
