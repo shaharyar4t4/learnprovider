@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:leranprovider/examplefavouriteapp/screen/myfavourite.dart';
-import 'package:leranprovider/links/app_linker.dart';
 
-class FavouriteScreen extends StatefulWidget {
-  const FavouriteScreen({super.key});
+import '../../links/app_linker.dart';
+
+class MyfavouriteItem extends StatefulWidget {
+  const MyfavouriteItem({super.key});
 
   @override
-  State<FavouriteScreen> createState() => _FavouriteScreenState();
+  State<MyfavouriteItem> createState() => _MyfavouriteItemState();
 }
 
-class _FavouriteScreenState extends State<FavouriteScreen> {
-  @override
-  Widget build(BuildContext context) {
+class _MyfavouriteItemState extends State<MyfavouriteItem> {
+Widget build(BuildContext context) {
+
+  final favouriteItem = Provider.of<FavouriteProvider>(context);
     print("build");
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +21,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
         actions: [
           IconButton(
             onPressed: () => {
-              Navigator.push(
+              Navigator.pop(
                 context,
                 MaterialPageRoute(builder: (context) => MyfavouriteItem()),
               ),
@@ -29,10 +30,10 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
           ),
         ],
       ),
-
+ 
       body: Expanded(
         child: ListView.builder(
-          itemCount: 100,
+          itemCount: favouriteItem.selectedIcon.length,
           itemBuilder: (context, index) {
             return Consumer<FavouriteProvider>(
               // there are some key point you about the provider state Managnment
@@ -65,4 +66,5 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
       ),
     );
   }
+
 }
