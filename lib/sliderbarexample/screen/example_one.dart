@@ -13,24 +13,28 @@ class _ViewExampleOneState extends State<ViewExampleOne> {
   
   @override
   Widget build(BuildContext context) {
-
-    final slideProvider = Provider.of<ExampleOneProvider>(context);
-
+        print("<-- Main widget is building");
+    
     return Scaffold(
+      
       appBar: AppBar(title: const Text('Example Provider')),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Slider(
-            value: slideProvider.value,
-            min: 0.0,
-            max: 1.0,
-            onChanged: (val){
-              slideProvider.setSlide(val);
-            },
+          Consumer<ExampleOneProvider>(builder: (context, value, child){
+            return  Slider(
+              value: value.value,
+              min: 0.0,
+              max: 1.0,
+              onChanged: (val){
+                value.setSlide(val);
+                print ("<-- rending");
+              },
+            );
+          },
           ),
-            
-          Row(
+          Consumer<ExampleOneProvider>(builder: (context, value,child){
+            return Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
@@ -39,7 +43,7 @@ class _ViewExampleOneState extends State<ViewExampleOne> {
                   vertical: 7,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.red.withOpacity(slideProvider.value),
+                  color: Colors.red.withOpacity(value.value),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
@@ -52,7 +56,7 @@ class _ViewExampleOneState extends State<ViewExampleOne> {
                   vertical: 7,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.blue.withOpacity(slideProvider.value),
+                  color: Colors.blue.withOpacity(value.value),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
@@ -60,7 +64,8 @@ class _ViewExampleOneState extends State<ViewExampleOne> {
                 ),
               ),
             ],
-          ),
+          );
+          })
         ],)
       
     );
