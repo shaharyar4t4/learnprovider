@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leranprovider/links/app_linker.dart';
 
 class FavouriteScreen extends StatefulWidget {
   const FavouriteScreen({super.key});
@@ -8,33 +9,40 @@ class FavouriteScreen extends StatefulWidget {
 }
 
 class _FavouriteScreenState extends State<FavouriteScreen> {
-
-  List<int>selectedIcon = [];
-
   @override
   Widget build(BuildContext context) {
     print("build");
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Favourite List'),
-      ),
+      appBar: AppBar(centerTitle: true, title: const Text('Favourite List')),
       body: Expanded(
         child: ListView.builder(
-          itemCount: 10,
-          itemBuilder: (context, index){
-            return ListTile(
-              onTap: (){
-                selectedIcon.add(index);
-                setState(() {
-                  
-                });
-
+          itemCount: 100,
+          itemBuilder: (context, index) {
+            return Consumer<FavouriteProvider>(
+              // there are some key point you about the provider state Managnment
+              // In Provider State Managnement
+              // content is represent the any widget building
+              // value is represent the any number or updated any value
+              // child is represent any child show on the inside the parsent widget
+              builder: (context, value, child) {
+                return ListTile(
+                  onTap: () {
+                    if (value.selectedIcon.contains(index)) {
+                      value.addItem(index);
+                    } else {
+                      value.removeItem(index);
+                    }
+                  },
+                  leading: const Icon(Icons.person),
+                  title: Text('Item ${index + 1}'),
+                  subtitle: const Text('this is description'),
+                  trailing: Icon(
+                    value.selectedIcon.contains(index)
+                        ? Icons.favorite
+                        : Icons.favorite_outline,
+                  ),
+                );
               },
-              leading: const Icon(Icons.person),
-              title:  Text('Item ${index + 1}'),
-              subtitle: const Text('this is description'),
-              trailing:  Icon( selectedIcon.contains(index) ? Icons.favorite : Icons.favorite_outline),
             );
           },
         ),

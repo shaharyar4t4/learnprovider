@@ -26,7 +26,6 @@ class _ViewExampleOneState extends State<ViewExampleOne> {
             min: 0.0,
             max: 1.0,
             onChanged: (val){
-            
               slideProvider.setSlide(val);
             },
           ),
