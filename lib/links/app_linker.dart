@@ -7,3 +7,4 @@ export 'package:flutter/foundation.dart';
 export 'package:leranprovider/counterexample/provider/count_provider.dart';
 export 'package:leranprovider/sliderbarexample/screen/example_one.dart';
 export 'package:leranprovider/sliderbarexample/provider/example_one_provider.dart';
+export 'package:leranprovider/examplefavouriteapp/screen/favourite_screen.dart';
