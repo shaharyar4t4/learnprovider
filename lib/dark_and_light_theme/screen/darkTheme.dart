@@ -15,7 +15,7 @@ class _DarkthemeState extends State<Darktheme> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("Dark Theme Screen"),
-        actions: [Icon(Icons.person,)],
+        actions: [Icon(Icons.person)],
       ),
 
       body: Column(

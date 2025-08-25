@@ -29,9 +29,7 @@ class MyApp extends StatelessWidget {
             darkTheme: ThemeData(
               brightness: Brightness.dark,
               primaryColor: Colors.purple,
-              iconTheme: IconThemeData(
-                color: Colors.purpleAccent
-              ),
+              iconTheme: IconThemeData(color: Colors.purpleAccent),
             ),
             theme: ThemeData(
               brightness: Brightness.light,
