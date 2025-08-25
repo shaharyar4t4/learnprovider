@@ -10,19 +10,28 @@ class Darktheme extends StatefulWidget {
 class _DarkthemeState extends State<Darktheme> {
   @override
   Widget build(BuildContext context) {
+    final appthemeChange = Provider.of<Changetheme>(context);
     return Scaffold(
       appBar: AppBar(
-        
         centerTitle: true,
         title: Text("Dark Theme Screen"),
-        actions: [
-          Icon(Icons.person),
-        ],
+        actions: [Icon(Icons.person)],
       ),
 
       body: Column(
         children: [
-          Text("Hello"),
+          RadioListTile<ThemeMode>(
+            title: Text("Light Mode"),
+            value: ThemeMode.light,
+            groupValue: appthemeChange.themeMode,
+            onChanged: appthemeChange.setTheme,
+          ),
+          RadioListTile<ThemeMode>(
+            title: Text("Dark Mode"),
+            value: ThemeMode.dark,
+            groupValue: appthemeChange.themeMode,
+            onChanged: appthemeChange.setTheme,
+          ),
         ],
       ),
     );
