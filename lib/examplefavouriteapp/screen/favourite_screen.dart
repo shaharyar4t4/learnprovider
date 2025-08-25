@@ -56,6 +56,9 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                     value.selectedIcon.contains(index)
                         ? Icons.favorite
                         : Icons.favorite_outline,
+                    color: value.selectedIcon.contains(index)
+                        ? Colors.red
+                        : Colors.grey,
                   ),
                 );
               },
