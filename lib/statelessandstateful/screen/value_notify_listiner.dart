@@ -8,8 +8,11 @@ class ValueNotifyListiner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("StateLess used as Statefull widget")),
-      body: Text("Hello"),
-
+      body: Column(
+        children: [
+          Text(_counter.value.toString(), style: TextStyle(fontSize: 26),),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           _counter.value++;
