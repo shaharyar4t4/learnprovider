@@ -1,3 +1,5 @@
+import 'package:leranprovider/statelessandstateful/screen/value_notify_listiner.dart';
+
 import 'links/app_linker.dart';
 
 void main() {
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
               brightness: Brightness.light,
               primarySwatch: Colors.cyan,
             ),
-            home: Darktheme(),
+            home: ValueNotifyListiner(),
           );
         },
       ),
