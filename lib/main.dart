@@ -1,5 +1,3 @@
-import 'package:leranprovider/dark_and_light_theme/provider/changeTheme.dart';
-
 import 'links/app_linker.dart';
 
 void main() {
@@ -17,7 +15,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => CountProvider()),
         ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
         ChangeNotifierProvider(create: (_) => FavouriteProvider()),
-        ChangeNotifierProvider(create: (_) => Changetheme())
+        ChangeNotifierProvider(create: (_) => Changetheme()),
       ],
 
       child: MaterialApp(
