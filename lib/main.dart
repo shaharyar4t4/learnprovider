@@ -18,14 +18,17 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => Changetheme()),
       ],
 
-      child: MaterialApp(
+      child: Builder(builder: (BuildContext context){
+          return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Learn Provider',
+        themeMode: Provider.of<Changetheme>(context).themeMode,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
         home: Darktheme(),
-      ),
+      );
+      }),
     );
 
     // this is show the single provider states
