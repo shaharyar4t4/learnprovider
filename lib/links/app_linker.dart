@@ -9,3 +9,4 @@ export 'package:leranprovider/sliderbarexample/screen/example_one.dart';
 export 'package:leranprovider/sliderbarexample/provider/example_one_provider.dart';
 export 'package:leranprovider/examplefavouriteapp/screen/favourite_screen.dart';
 export 'package:leranprovider/examplefavouriteapp/provider/favourite_provider.dart';
+export 'package:leranprovider/dark_and_light_theme/screen/darkTheme.dart';
