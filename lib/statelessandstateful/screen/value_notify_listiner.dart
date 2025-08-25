@@ -5,6 +5,11 @@ class ValueNotifyListiner extends StatelessWidget {
 
   ValueNotifier<int> _counter = ValueNotifier<int>(0);
   ValueNotifier<bool> toggle = ValueNotifier<bool>(true);
+
+
+  // important note 
+  // Your are not used the initstate and dispose beause this is a statless widget 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,12 +17,38 @@ class ValueNotifyListiner extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          ValueListenableBuilder(
+            valueListenable: toggle,
+            builder: (context, value, child) {
+              return TextFormField(
+                // enabled: toggle.value,
+                obscureText: toggle.value,
+                decoration: InputDecoration(
+                  hintText: "Password",
+                  suffix: InkWell(
+                    onTap: () {
+                      toggle.value = !toggle.value;
+                    },
+                    child: Icon(
+                      toggle.value ? Icons.visibility_off : Icons.visibility,
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+
           Center(
-            child: ValueListenableBuilder(valueListenable: _counter, 
-            builder: (context, build, child ){
-              return Text(_counter.value.toString(), style: TextStyle(fontSize: 26),);
-            }),
-          )
+            child: ValueListenableBuilder(
+              valueListenable: _counter,
+              builder: (context, build, child) {
+                return Text(
+                  _counter.value.toString(),
+                  style: TextStyle(fontSize: 26),
+                );
+              },
+            ),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
