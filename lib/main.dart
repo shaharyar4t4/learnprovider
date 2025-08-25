@@ -26,8 +26,16 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Learn Provider',
             themeMode: themeChange.themeMode,
+            darkTheme: ThemeData(
+              brightness: Brightness.dark,
+              primaryColor: Colors.purple,
+              iconTheme: IconThemeData(
+                color: Colors.purpleAccent
+              ),
+            ),
             theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              brightness: Brightness.light,
+              primarySwatch: Colors.cyan,
             ),
             home: Darktheme(),
           );

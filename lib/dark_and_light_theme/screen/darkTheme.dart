@@ -15,7 +15,7 @@ class _DarkthemeState extends State<Darktheme> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("Dark Theme Screen"),
-        actions: [Icon(Icons.person)],
+        actions: [Icon(Icons.person,)],
       ),
 
       body: Column(
@@ -29,6 +29,12 @@ class _DarkthemeState extends State<Darktheme> {
           RadioListTile<ThemeMode>(
             title: Text("Dark Mode"),
             value: ThemeMode.dark,
+            groupValue: appthemeChange.themeMode,
+            onChanged: appthemeChange.setTheme,
+          ),
+          RadioListTile<ThemeMode>(
+            title: Text("System Mode"),
+            value: ThemeMode.system,
             groupValue: appthemeChange.themeMode,
             onChanged: appthemeChange.setTheme,
           ),
