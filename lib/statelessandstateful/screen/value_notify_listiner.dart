@@ -4,13 +4,20 @@ class ValueNotifyListiner extends StatelessWidget {
   ValueNotifyListiner({Key? key}) : super(key: key);
 
   ValueNotifier<int> _counter = ValueNotifier<int>(0);
+  ValueNotifier<bool> toggle = ValueNotifier<bool>(true);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("StateLess used as Statefull widget")),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(_counter.value.toString(), style: TextStyle(fontSize: 26),),
+          Center(
+            child: ValueListenableBuilder(valueListenable: _counter, 
+            builder: (context, build, child ){
+              return Text(_counter.value.toString(), style: TextStyle(fontSize: 26),);
+            }),
+          )
         ],
       ),
       floatingActionButton: FloatingActionButton(
